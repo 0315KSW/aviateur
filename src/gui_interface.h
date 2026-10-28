@@ -21,7 +21,7 @@
 #define CONFIG_FILE "config.ini"
 
 // Identifies our modified receiver build in every log.
-#define LOWLAT_BUILD_TAG "Aviateur 0.3.3 + lowlat-rx patch 1 (stats, key rb, devourer rx env)"
+#define LOWLAT_BUILD_TAG "Aviateur 0.3.3 + lowlat-rx patch 1.1 (stats, key rb, devourer rx env, log file fix)"
 
 #define CONFIG_CONFIG "config"
 #define CONFIG_VERSION "version"
@@ -562,7 +562,11 @@ public:
     void EmitLog(LogLevel level, std::string msg) {
         for (auto &callback : logCallbacks) {
             try {
-                callback.operator()<LogLevel, std::string>(std::move(level), std::move(msg));
+                // Pass copies: upstream moved `msg` into the first callback, so every
+                // later callback (e.g. the log file writer) received an empty string.
+                LogLevel lv = level;
+                std::string m = msg;
+                callback.operator()<LogLevel, std::string>(std::move(lv), std::move(m));
             } catch (std::bad_any_cast &) {
             }
         }
