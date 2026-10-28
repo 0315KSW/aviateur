@@ -1,0 +1,65 @@
+name: lowlat Windows build
+
+# Builds the modified receiver for Windows and uploads a ready-to-run zip
+# (aviateur.exe + DLLs + assets + launchers) as a workflow artifact.
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-2025
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout submodules (skip devourer's nested submodules)
+        shell: bash
+        run: |
+          git submodule update --init --recursive -- 3rd/json 3rd/mINI 3rd/SDL 3rd/vecgui
+          git submodule update --init -- 3rd/devourer
+
+      - name: Install dependency libraries (vcpkg)
+        run: |
+          git clone https://github.com/Microsoft/vcpkg.git
+          cd vcpkg
+          .\bootstrap-vcpkg.bat
+          .\vcpkg integrate install
+          .\vcpkg install libusb ffmpeg libsodium
+          echo ("VCPKG_ROOT=" + "$PWD") >> $env:GITHUB_ENV
+
+      - name: Configure
+        run: >
+          cmake -B build
+          -DCMAKE_CXX_COMPILER=cl
+          -DCMAKE_C_COMPILER=cl
+          -DCMAKE_BUILD_TYPE=Release
+          -DVECGUI_VULKAN=OFF
+          -S ${{ github.workspace }}
+
+      - name: Build
+        run: cmake --build build --config Release --target aviateur
+
+      - name: Package
+        shell: pwsh
+        run: |
+          $out = "Aviateur_lowlat_windows_x86_64"
+          New-Item -ItemType Directory -Force -Path $out | Out-Null
+          $exe = Get-ChildItem -Path build -Recurse -Filter aviateur.exe | Select-Object -First 1
+          if (-not $exe) { throw "aviateur.exe not found" }
+          Copy-Item "$($exe.DirectoryName)\*" $out -Recurse -Force
+          # Assets are copied by a post-build step to build/bin/assets (not the per-config folder).
+          Copy-Item "build\bin\assets" "$out\assets" -Recurse -Force
+          # Runtime DLLs from vcpkg (FFmpeg, libusb, libsodium).
+          Copy-Item "$env:VCPKG_ROOT\installed\x64-windows\bin\*.dll" $out -Force
+          Copy-Item "lowlat\*.bat" $out -Force
+          Copy-Item "lowlat\README_LOWLAT.md" $out -Force
+          git rev-parse --short HEAD > "$out\BUILD_COMMIT.txt"
+          Get-ChildItem $out | Format-Table Name, Length
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Aviateur_lowlat_windows_x86_64
+          path: Aviateur_lowlat_windows_x86_64

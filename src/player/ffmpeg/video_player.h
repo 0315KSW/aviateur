@@ -47,6 +47,8 @@ protected:
     std::shared_ptr<FfmpegDecoder> decoder;
 
     std::queue<std::shared_ptr<AVFrame>> videoFrameQueue;
+    // Steady-clock time (us) each queued frame was pushed; parallel to videoFrameQueue.
+    std::queue<int64_t> videoFramePushUs;
 
     SDL_AudioStream *stream{};
 

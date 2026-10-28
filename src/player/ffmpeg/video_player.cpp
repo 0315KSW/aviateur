@@ -8,6 +8,7 @@
 #include <sstream>
 
 #include "../../gui_interface.h"
+#include "../../link_stats.h"
 #include "jpeg_encoder.h"
 
 #define DEFAULT_GIF_FRAMERATE 10
@@ -98,6 +99,12 @@ std::shared_ptr<AVFrame> VideoPlayerFfmpeg::getFrame() {
     // Remove the frame from the queue.
     videoFrameQueue.pop();
 
+    if (!videoFramePushUs.empty()) {
+        lowlat::LinkStats::I().AddQueueWaitUs(lowlat::SteadyUs() - videoFramePushUs.front());
+        videoFramePushUs.pop();
+    }
+    lowlat::LinkStats::I().OnFrameRendered();
+
     lastFrame_ = frame;
 
     return frame;
@@ -170,6 +177,7 @@ void VideoPlayerFfmpeg::play(const std::string &playUrl, bool forceSoftwareDecod
                     }
 
                     consecutiveFrameCount++;
+                    lowlat::LinkStats::I().frames_decoded++;
 
                     // Success path: notify recovery only if we previously lost signal AND we have stable frames
                     if (consecutiveFrameCount >= 5) {
@@ -195,24 +203,33 @@ void VideoPlayerFfmpeg::play(const std::string &playUrl, bool forceSoftwareDecod
                     std::lock_guard lck(mtx);
                     if (videoFrameQueue.size() > 1) {
                         videoFrameQueue.pop();
+                        if (!videoFramePushUs.empty()) {
+                            videoFramePushUs.pop();
+                        }
+                        lowlat::LinkStats::I().frames_dropped_queue++;
                     }
                     videoFrameQueue.push(frame);
+                    videoFramePushUs.push(lowlat::SteadyUs());
                 }
                 // Decoder error.
                 catch (const SendPacketException &e) {
                     consecutiveFrameCount = 0;
                     has_emitted_ready_ = false;
                     GuiInterface::Instance().PutLog(LogLevel::Error, "Send packet failed: {}", e.what());
+                    lowlat::LinkStats::I().send_errors++;
 
                     if (++sendPacketErrorCount > 10) {
                         GuiInterface::Instance().ShowTip("codec error, reconnecting...", true);
                         isSignalLostNotified = true;
 
+                        GuiInterface::Instance().PutLog(LogLevel::Info, "[EVENT] decoder reopen (codec errors)");
+                        lowlat::LinkStats::I().reopens++;
                         localDecoder->CloseInput();
                         std::this_thread::sleep_for(std::chrono::seconds(1));
                         if (localDecoder->OpenInput(url, forceSoftwareDecoding)) {
                             sendPacketErrorCount = 0;
                             readRetryCount = 0;
+                            GuiInterface::Instance().PutLog(LogLevel::Info, "[EVENT] decoder reopened");
                         }
                     }
                 }
@@ -221,6 +238,7 @@ void VideoPlayerFfmpeg::play(const std::string &playUrl, bool forceSoftwareDecod
                     consecutiveFrameCount = 0;
                     has_emitted_ready_ = false;
                     GuiInterface::Instance().PutLog(LogLevel::Error, "Read frame failed: {}", e.what());
+                    lowlat::LinkStats::I().read_errors++;
 
                     readRetryCount++;
 
@@ -231,6 +249,8 @@ void VideoPlayerFfmpeg::play(const std::string &playUrl, bool forceSoftwareDecod
 
                     if (readRetryCount >= 2) {
                         // Re-open input to reset FFmpeg RTP state (SSRC, sequence numbers, etc.)
+                        GuiInterface::Instance().PutLog(LogLevel::Info, "[EVENT] decoder reopen (read errors)");
+                        lowlat::LinkStats::I().reopens++;
                         localDecoder->CloseInput();
                         std::this_thread::sleep_for(std::chrono::seconds(1));
 
@@ -268,6 +288,7 @@ void VideoPlayerFfmpeg::stop() {
     {
         std::lock_guard lck(mtx);
         videoFrameQueue = std::queue<std::shared_ptr<AVFrame>>();
+        videoFramePushUs = std::queue<int64_t>();
     }
 
     // Do this before closing input.

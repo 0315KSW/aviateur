@@ -15,9 +15,13 @@
     #include <unistd.h>
 #endif
 
+#include "link_stats.h"
 #include "wifi/wfbng_link.h"
 
 #define CONFIG_FILE "config.ini"
+
+// Identifies our modified receiver build in every log.
+#define LOWLAT_BUILD_TAG "Aviateur 0.3.3 + lowlat-rx patch 1 (stats, key rb, devourer rx env)"
 
 #define CONFIG_CONFIG "config"
 #define CONFIG_VERSION "version"
@@ -174,6 +178,26 @@ public:
                 }
             };
             logCallbacks.emplace_back(logCallback);
+
+            // Timestamped log file next to the executable (logs/aviateur_<start>.log).
+            // Upstream only logs to a hidden console, which made field tests hard to analyse.
+            const auto logPath = lowlat::LogDir() / ("aviateur_" + lowlat::FileStamp() + ".log");
+            static std::FILE *logFile = lowlat::OpenFile(logPath, "w");
+            static std::mutex logFileMutex;
+            auto fileLogCallback = [](LogLevel level, std::string msg) {
+                if (!logFile) {
+                    return;
+                }
+                const char *lv = level == LogLevel::Error  ? "ERROR"
+                                 : level == LogLevel::Warn ? "WARN"
+                                 : level == LogLevel::Debug ? "DEBUG"
+                                                            : "INFO";
+                std::lock_guard lk(logFileMutex);
+                std::fprintf(logFile, "[%s] %s\n", lv, msg.c_str());
+                std::fflush(logFile);
+            };
+            logCallbacks.emplace_back(fileLogCallback);
+            PutLog(LogLevel::Info, "{} (log file: {})", LOWLAT_BUILD_TAG, lowlat::PathUtf8(logPath));
         }
 
         // Load config.
@@ -393,7 +417,7 @@ public:
     template <typename... Args>
     void PutLog(LogLevel level, const std::string_view message, Args... format_items) {
         std::string str = std::vformat(message, std::make_format_args(format_items...));
-        EmitLog(level, str);
+        EmitLog(level, lowlat::WallClock() + " " + str);
     }
 
     void NotifyRtpStream(int pt, uint16_t ssrc, int port, const std::string &codec) {

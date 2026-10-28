@@ -11,6 +11,8 @@
 #include <sstream>
 
 #include "../gui_interface.h"
+#include "../link_stats.h"
+#include "devourer_env.h"
 #include "RxPacket.h"
 #include "UsbOpen.h"
 #include "WiFiDriver.h"
@@ -58,6 +60,7 @@ protected:
     void send_to_socket(const uint8_t *payload, uint16_t packet_size) override {
         GuiInterface::Instance().rtpPktCount_++;
         GuiInterface::Instance().UpdateCount();
+        lowlat::LinkStats::I().rtp_pkts++;
 
         if (packet_size < 12) {
             return;
@@ -83,8 +86,16 @@ protected:
                                                      GuiInterface::Instance().playerCodec);
         }
 
-        if (prev_seq_num.has_value() && seq_num - prev_seq_num.value() > 1) {
-            GuiInterface::Instance().PutLog(LogLevel::Info, "RTP packets lost: {}", seq_num - prev_seq_num.value() - 1);
+        if (prev_seq_num.has_value()) {
+            // 16-bit wrap-safe difference. Upstream compared with int promotion, so
+            // gaps across the 65535 -> 0 wrap were never reported.
+            const uint16_t diff = static_cast<uint16_t>(seq_num - prev_seq_num.value());
+            if (diff > 1 && diff < 0x8000) {
+                const int lost = diff - 1;
+                lowlat::LinkStats::I().rtp_gap_events++;
+                lowlat::LinkStats::I().rtp_gap_pkts += lost;
+                GuiInterface::Instance().PutLog(LogLevel::Info, "RTP packets lost: {}", lost);
+            }
         }
         prev_seq_num = seq_num;
 
@@ -266,6 +277,15 @@ std::vector<DeviceId> WfbngLink::get_device_list() {
 }
 
 bool WfbngLink::start(const DeviceId &deviceId, uint8_t channel, int channelWidthMode, const std::string &kPath) {
+    lowlat::LinkStats::I().Start([](const std::string &msg) { GuiInterface::Instance().PutLog(LogLevel::Info, "{}", msg); });
+    GuiInterface::Instance().PutLog(LogLevel::Info,
+                                    "[LINK] start: device {:04x}:{:04x} channel {} width_mode {} key {}",
+                                    deviceId.vendor_id,
+                                    deviceId.product_id,
+                                    channel,
+                                    channelWidthMode,
+                                    kPath.empty() ? std::string("(default)") : kPath);
+
     GuiInterface::Instance().wifiFrameCount_ = 0;
     GuiInterface::Instance().wfbngFrameCount_ = 0;
     GuiInterface::Instance().rtpPktCount_ = 0;
@@ -383,7 +403,11 @@ bool WfbngLink::start(const DeviceId &deviceId, uint8_t channel, int channelWidt
                 return;
             }
 
-            rtlDevice = wifi_driver.CreateRtlDevice(devHandle, ctx, usb_lock);
+            std::string rx_cfg_summary;
+            const devourer::DeviceConfig dev_cfg = lowlat::DevourerRxConfigFromEnv(rx_cfg_summary);
+            GuiInterface::Instance().PutLog(LogLevel::Info, "{}", rx_cfg_summary);
+
+            rtlDevice = wifi_driver.CreateRtlDevice(devHandle, ctx, usb_lock, dev_cfg);
 
             if (exit_requested) {
                 return;
@@ -680,12 +704,14 @@ void WfbngLink::stop_adaptive_link() {
 void WfbngLink::handle_80211_frame(const Packet &packet) {
     GuiInterface::Instance().wifiFrameCount_++;
     GuiInterface::Instance().UpdateCount();
+    lowlat::LinkStats::I().wifi_frames++;
 
     const RxFrame frame(packet.Data);
     if (!frame.IsValidWfbFrame()) {
         return;
     }
 
+    lowlat::LinkStats::I().wfb_frames++;
     GuiInterface::Instance().wfbngFrameCount_++;
     GuiInterface::Instance().UpdateCount();
 
@@ -752,6 +778,21 @@ void WfbngLink::handle_80211_frame(const Packet &packet) {
                                            video_aggregator->count_p_fec_recovered,
                                            video_aggregator->count_p_lost);
 
+        {
+            auto &st = lowlat::LinkStats::I();
+            st.OnVideoPacket();
+            st.AddSignal(packet.RxAtrib.rssi[0], packet.RxAtrib.rssi[1], packet.RxAtrib.snr[0], packet.RxAtrib.snr[1]);
+            st.wfb_all += video_aggregator->count_p_all;
+            st.wfb_session += video_aggregator->count_p_session;
+            st.wfb_data += video_aggregator->count_p_data;
+            st.wfb_dec_err += video_aggregator->count_p_dec_err;
+            st.wfb_bad += video_aggregator->count_p_bad;
+            st.fec_recovered += video_aggregator->count_p_fec_recovered;
+            st.lost_after_fec += video_aggregator->count_p_lost;
+            st.wfb_out_pkts += video_aggregator->count_p_outgoing;
+            st.wfb_out_bytes += video_aggregator->count_b_outgoing;
+        }
+
         // This is necessary.
         video_aggregator->clear_stats();
 
@@ -794,6 +835,8 @@ int WfbngLink::get_packet_loss() const {
 }
 
 void WfbngLink::stop() {
+    GuiInterface::Instance().PutLog(LogLevel::Info, "[LINK] stop requested");
+
     // Signal the thread immediately.
     exit_requested = true;
 
@@ -811,6 +854,8 @@ void WfbngLink::stop() {
         usbThread->join();
         usbThread.reset();
     }
+
+    lowlat::LinkStats::I().Stop();
 }
 
 bool WfbngLink::get_alink_enabled() const {

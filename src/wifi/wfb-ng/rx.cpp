@@ -276,7 +276,9 @@ Aggregator::Aggregator(const string &keypair, uint64_t epoch, uint32_t channel_i
     memset(session_key, '\0', sizeof(session_key));
 
     FILE *fp;
-    if((fp = fopen(keypair.c_str(), "r")) == NULL)
+    // "rb": the key is binary. In text mode the Windows CRT treats 0x1A as end-of-file and
+    // translates CR/LF, so keys containing those bytes failed with "Unable to read rx secret key".
+    if((fp = fopen(keypair.c_str(), "rb")) == NULL)
     {
         throw runtime_error(string_format("Unable to open %s: %s", keypair.c_str(), strerror(errno)));
     }
