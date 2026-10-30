@@ -1,0 +1,240 @@
+<Aviateur>[INFO] Set alink tx power: 20
+devourer [I] USB adapter 1-3 locked for exclusive access
+devourer [I] Creating RtlJaguarDevice (PID 0x8812, chip-id 0x04)
+devourer [I] USB device 0bda:8812
+devourer [I] Running USB bus at 480MBit/s
+devourer [I] selected USB interface 0
+devourer [I] endpoint[0]: addr=0x81 attrs=0x2 bulk=1 in=1
+devourer [I] selected bulk IN endpoint: 0x81
+devourer [I] endpoint[1]: addr=0x2 attrs=0x2 bulk=1 in=0
+devourer [I] endpoint[2]: addr=0x3 attrs=0x2 bulk=1 in=0
+devourer [I] endpoint[3]: addr=0x4 attrs=0x2 bulk=1 in=0
+devourer [I] endpoint[4]: addr=0x85 attrs=0x3 bulk=0 in=1
+devourer [I] bulk OUT endpoints: 0x02 0x03 0x04
+devourer [I] libusb_clear_halt(bulk IN 0x81) rc=0
+devourer [I] OutEpQueueSel(7), OutEpNumber(3)
+devourer [I] Boot from EFUSE, Autoload OK !
+devourer [I] read_chip_version_8812a SYS_CFG(0xF0)=0x04411135
+devourer [I] RF_Type is 2 TotalTxPath is 2 MaxSS is 2
+devourer [I] Chip Version Info: CHIP_8812_Normal_Chip_TSMC_C_CUT_2T2R_RomVer(0)
+{"ev":"init.timing","stage":"eeprom.chip_version","ms":0}
+devourer [I] efuse_Addr-0 efuse_data=8
+devourer [I] Hal_EfuseReadEFuse8812A: eFuse_Addr offset(0x1AB) !!
+{"ev":"init.timing","stage":"eeprom.efuse_read","ms":210}
+devourer [I] EEPROM ID=0x8129
+devourer [I] pHalData.EEPROMVersion is 0x0
+devourer [I] EEPROMRegulatory = 0x1
+devourer [I] LoadTxPowerInfo: parsed 2 paths, 2.4G ch6 CCK_Base[0]=0x2d BW40_Base[0]=0x2d
+devourer [I] LoadTxPowerByRate: 2.4G path-A OFDM-6M offset=20 HT-MCS7 base=40
+devourer [I] LoadTxPowerLimit: active regulation=FCC (FCC OFDM 1T ch6 = 36)
+devourer [I] crystal_cap: 0x1B
+devourer [I] ThermalMeter = 0x29
+devourer [I] pHalData.PAType_2G is 0x3, pHalData.ExternalPA_2G = 0
+devourer [I] pHalData.PAType_5G is 0x3, pHalData.external_pa_5g = 1
+devourer [I] pHalData.LNAType_2G is 0x0, pHalData.ExternalLNA_2G = 0
+devourer [I] pHalData.LNAType_5G is 0x88, pHalData.external_lna_5g = 1
+devourer [I] pHalData.TypeGPA = 0x2
+devourer [I] pHalData.TypeAPA = 0x0
+devourer [I] pHalData.TypeGLNA = 0x3
+devourer [I] pHalData.TypeALNA = 0x0
+devourer [I] RFE Type: 0x1
+devourer [I] antenna=2, wmode=3
+devourer [I] EFUSE_HIDDEN_812AU
+{"ev":"init.timing","stage":"eeprom.parse","ms":3}
+{"ev":"init.timing","stage":"eeprom.total","ms":213}
+devourer [I] power-on :REG_SYS_CLKR 0x09=0xB0. REG_CR 0x100=0xEA
+devourer [I] MAC has not been powered on yet
+Transmitter is listening on UDP port: 8001
+{"ev":"init.timing","stage":"hal_init.power_on","ms":4}
+{"ev":"init.timing","stage":"hal_init.llt","ms":29}
+devourer [I] FirmwareDownload(ic=6): fw_ver=52 fw_subver=10 sig=0x9501
+devourer [I] FirmwareManager::polling_fwdl_chksum: Checksum report OK! (1, 0ms), REG_MCUFWDL:00060705
+devourer [I] =====> _8051Reset8812(): 8051 reset success .
+devourer [I] FirmwareManager::_FWFreeToGo8812: Polling FW ready OK! (522, 27ms), REG_MCUFWDL:0x000607c6
+{"ev":"init.timing","stage":"hal_init.fwdl","ms":58}
+{"ev":"init.timing","stage":"hal_init.efuse_late","ms":0}
+{"ev":"init.timing","stage":"hal_init.mac_cfg","ms":6}
+{"ev":"init.timing","stage":"hal_init.queue_fifo","ms":1}
+{"ev":"init.timing","stage":"hal_init.mac_misc","ms":4}
+{"ev":"init.timing","stage":"hal_init.bb_config","ms":696}
+<vecgui>[INFO] Frame time: 16.73 ms | FPS: 60
+{"ev":"init.timing","stage":"hal_init.rf_config","ms":1002}
+devourer [I] PowerTracking8812a init: default_ofdm_index=24 (swing_idx_from_bb=24) eeprom_thermal=0x29 txpwrtrack_ctrl=1
+devourer [I] [PHY_SwitchWirelessBand8812] 5G
+{"ev":"init.timing","stage":"hal_init.band_switch","ms":3}
+devourer [I] [PHY_HandleSwChnlAndSetBW8812] bSwitchChannel 1, bSetBandWidth 1
+{"ev":"init.timing","stage":"channel_set.sw_chnl","ms":84}
+{"ev":"init.timing","stage":"channel_set.set_bw","ms":43}
+{"ev":"init.timing","stage":"channel_set.tx_power","ms":10}
+devourer [I] Iqk8812a::Calibrate done (channel=36)
+{"ev":"init.timing","stage":"channel_set.iqk","ms":296}
+{"ev":"init.timing","stage":"channel_set.total","ms":434}
+{"ev":"init.timing","stage":"hal_init.channel_set","ms":435}
+devourer [I] post-init final: REG_CR observed=0x06ff written=0x06ff REG_RXFLTMAP2=0xFFFF
+devourer [I] REG_MACID programmed from EFUSE: fc:22:1c:30:0f:37
+{"ev":"init.timing","stage":"hal_init.post_init","ms":1}
+{"ev":"init.timing","stage":"hal_init.total","ms":2243}
+{"ev":"init.timing","stage":"hal.chip_init","ms":2243}
+devourer [I] [HW_VAR_ENABLE_RX_BAR] 0x 6A2=0x 520
+devourer [I] [set_channel_bwmode] ch = 36, offset = 0, bwmode = 0
+devourer [I] [PHY_HandleSwChnlAndSetBW8812] bSwitchChannel 1, bSetBandWidth 1
+{"ev":"init.timing","stage":"channel_set.sw_chnl","ms":85}
+{"ev":"init.timing","stage":"channel_set.set_bw","ms":42}
+{"ev":"init.timing","stage":"channel_set.tx_power","ms":11}
+{"ev":"init.timing","stage":"channel_set.iqk","ms":20}
+{"ev":"init.timing","stage":"channel_set.total","ms":161}
+{"ev":"init.timing","stage":"hal.mlme_monitor","ms":162}
+{"ev":"init.timing","stage":"hal.total","ms":2406}
+devourer [I] [set_channel_bwmode] ch = 36, offset = 0, bwmode = 0
+devourer [I] [PHY_HandleSwChnlAndSetBW8812] bSwitchChannel 1, bSetBandWidth 1
+devourer [I] [PHY_HandleSwChnlAndSetBW8812]: _swChannel 0, _setChannelBw 0
+devourer [I] Jaguar1: EDCCA thresholds L2H/H2L = 5/-2 (igi=0x1c)
+devourer [I] Jaguar1: MAC carrier-sense enabled (default)
+devourer [I] Listening air...
+devourer [I] RX: async ring of 8 URBs submitted (+0 spare, 0 zerocopy DMA, 8 heap)
+<vecgui>[INFO] Frame time: 16.69 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.66 ms | FPS: 60
+1121545913      SESSION 0:1:8:12
+<Aviateur>[INFO] Generated SDP: Codec: H265, Payload type: 96, Port: 52356
+<Aviateur>[INFO] FfmpegDecoder::OpenInput
+<Aviateur>[INFO] FfmpegDecoder::CloseInput
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D906D080] PPS id out of range: 0
+[hevc @ 00000270D906D080] Skipping invalid undecodable NALU: 1
+<Aviateur>[INFO] Video codec ID: 173
+<Aviateur>[INFO] Video codec name: HEVC (High Efficiency Video Coding)
+<Aviateur>[INFO] Software decoding is forced
+<Aviateur>[INFO] Video frame rate: 30
+<Aviateur>[INFO] SPS + PPS + Keyframe received. Starting decoder.
+<Aviateur>[INFO] YUV pixel format is YUV420P/YUVJ420P
+<Aviateur>[INFO] Resizing render image to 1280x720
+<vecgui>[INFO] Frame time: 16.52 ms | FPS: 60
+<Aviateur>[INFO] RTP packets lost: 6
+[hevc @ 00000270D906D080] Could not find ref with POC 11
+[hevc @ 00000270D906D080] Could not find ref with POC 11
+[hevc @ 00000270D906D080] Could not find ref with POC 11
+[hevc @ 00000270D906D080] Could not find ref with POC 11
+<vecgui>[INFO] Frame time: 16.67 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.67 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.68 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.68 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.72 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.46 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.78 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.68 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.95 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.65 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.66 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.52 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.67 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.63 ms | FPS: 60
+<vecgui>[INFO] Frame time: 16.64 ms | FPS: 60

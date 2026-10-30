@@ -1,0 +1,285 @@
+alink_tx_power=20
+forward_port=
+
+[localhost]
+port=5600
+codec=H265
+
+[settings]
+language=en
+render_backend=opengl
+dark_mode=false
+
+
+<Aviateur>[INFO] App started
+<PF>[INFO] Using OpenGL backend
+<PF>[INFO] Window created:
+  Physical Size: (1280, 720)
+  Logical Size: (1280, 720)
+  DPI Scaling: 1
+<PF>[INFO] Debug markers disabled. Try running from inside a OpenGL graphics debugger (e.g. RenderDoc).
+<PF>[INFO] Version: 4.3
+<PF>[INFO] Created new canvas using Raster render mode
+<Aviateur>[INFO] Entering app main loop
+<Aviateur>[INFO] Enable alink: false
+<Aviateur>[INFO] Enable alink: false
+<Aviateur>[INFO] Using port: 52356
+<Aviateur>[INFO] Set alink tx power: 20
+devourer [I] USB adapter 1-3 locked for exclusive access
+devourer [I] Creating RtlJaguarDevice (PID 0x8812, chip-id 0x04)
+devourer [I] USB device 0bda:8812
+devourer [I] Running USB bus at 480MBit/s
+devourer [I] selected USB interface 0
+devourer [I] endpoint[0]: addr=0x81 attrs=0x2 bulk=1 in=1
+devourer [I] selected bulk IN endpoint: 0x81
+devourer [I] endpoint[1]: addr=0x2 attrs=0x2 bulk=1 in=0
+devourer [I] endpoint[2]: addr=0x3 attrs=0x2 bulk=1 in=0
+devourer [I] endpoint[3]: addr=0x4 attrs=0x2 bulk=1 in=0
+devourer [I] endpoint[4]: addr=0x85 attrs=0x3 bulk=0 in=1
+devourer [I] bulk OUT endpoints: 0x02 0x03 0x04
+devourer [I] libusb_clear_halt(bulk IN 0x81) rc=0
+devourer [I] OutEpQueueSel(7), OutEpNumber(3)
+devourer [I] Boot from EFUSE, Autoload OK !
+devourer [I] read_chip_version_8812a SYS_CFG(0xF0)=0x04411137
+devourer [I] RF_Type is 2 TotalTxPath is 2 MaxSS is 2
+devourer [I] Chip Version Info: CHIP_8812_Normal_Chip_TSMC_C_CUT_2T2R_RomVer(0)
+{"ev":"init.timing","stage":"eeprom.chip_version","ms":0}
+devourer [I] efuse_Addr-0 efuse_data=8
+devourer [I] Hal_EfuseReadEFuse8812A: eFuse_Addr offset(0x1AB) !!
+{"ev":"init.timing","stage":"eeprom.efuse_read","ms":217}
+devourer [I] EEPROM ID=0x8129
+devourer [I] pHalData.EEPROMVersion is 0x0
+devourer [I] EEPROMRegulatory = 0x1
+devourer [I] LoadTxPowerInfo: parsed 2 paths, 2.4G ch6 CCK_Base[0]=0x2d BW40_Base[0]=0x2d
+devourer [I] LoadTxPowerByRate: 2.4G path-A OFDM-6M offset=20 HT-MCS7 base=40
+devourer [I] LoadTxPowerLimit: active regulation=FCC (FCC OFDM 1T ch6 = 36)
+devourer [I] crystal_cap: 0x1B
+devourer [I] ThermalMeter = 0x29
+devourer [I] pHalData.PAType_2G is 0x3, pHalData.ExternalPA_2G = 0
+devourer [I] pHalData.PAType_5G is 0x3, pHalData.external_pa_5g = 1
+devourer [I] pHalData.LNAType_2G is 0x0, pHalData.ExternalLNA_2G = 0
+devourer [I] pHalData.LNAType_5G is 0x88, pHalData.external_lna_5g = 1
+devourer [I] pHalData.TypeGPA = 0xFFFF
+devourer [I] pHalData.TypeAPA = 0x0
+devourer [I] pHalData.TypeGLNA = 0xFFFF
+devourer [I] pHalData.TypeALNA = 0x0
+devourer [I] RFE Type: 0x1
+devourer [I] antenna=2, wmode=3
+devourer [I] EFUSE_HIDDEN_812AU
+{"ev":"init.timing","stage":"eeprom.parse","ms":1}
+{"ev":"init.timing","stage":"eeprom.total","ms":219}
+devourer [I] power-on :REG_SYS_CLKR 0x09=0xFC. REG_CR 0x100=0xFF
+devourer [I] MAC has already power on
+Transmitter is listening on UDP port: 8001
+devourer [I] =====> _8051Reset8812(): 8051 reset success .
+{"ev":"init.timing","stage":"hal_init.power_on","ms":4}
+{"ev":"init.timing","stage":"hal_init.llt","ms":30}
+devourer [I] FirmwareDownload(ic=6): fw_ver=52 fw_subver=10 sig=0x9501
+devourer [I] FirmwareManager::polling_fwdl_chksum: Checksum report OK! (1, 0ms), REG_MCUFWDL:00060705
+devourer [I] =====> _8051Reset8812(): 8051 reset success .
+devourer [I] FirmwareManager::_FWFreeToGo8812: Polling FW ready OK! (501, 28ms), REG_MCUFWDL:0x000607c6
+{"ev":"init.timing","stage":"hal_init.fwdl","ms":58}
+{"ev":"init.timing","stage":"hal_init.efuse_late","ms":0}
+{"ev":"init.timing","stage":"hal_init.mac_cfg","ms":5}
+{"ev":"init.timing","stage":"hal_init.queue_fifo","ms":0}
+{"ev":"init.timing","stage":"hal_init.mac_misc","ms":4}
+<vecgui>[INFO] Frame time: 16.82 ms | FPS: 60
+{"ev":"init.timing","stage":"hal_init.bb_config","ms":4641}
+<vecgui>[INFO] Frame time: 17.21 ms | FPS: 62
+{"ev":"init.timing","stage":"hal_init.rf_config","ms":5500}
+devourer [I] PowerTracking8812a init: default_ofdm_index=24 (swing_idx_from_bb=24) eeprom_thermal=0x29 txpwrtrack_ctrl=1
+devourer [I] [PHY_SwitchWirelessBand8812] 5G
+{"ev":"init.timing","stage":"hal_init.band_switch","ms":6}
+devourer [I] [PHY_HandleSwChnlAndSetBW8812] bSwitchChannel 1, bSetBandWidth 1
+{"ev":"init.timing","stage":"channel_set.sw_chnl","ms":118}
+{"ev":"init.timing","stage":"channel_set.set_bw","ms":62}
+{"ev":"init.timing","stage":"channel_set.tx_power","ms":15}
+<vecgui>[INFO] Frame time: 16.34 ms | FPS: 61
+devourer [I] Iqk8812a::Calibrate done (channel=36)
+{"ev":"init.timing","stage":"channel_set.iqk","ms":496}
+{"ev":"init.timing","stage":"channel_set.total","ms":692}
+{"ev":"init.timing","stage":"hal_init.channel_set","ms":692}
+devourer [I] post-init final: REG_CR observed=0x06ff written=0x06ff REG_RXFLTMAP2=0xFFFF
+devourer [I] REG_MACID programmed from EFUSE: fc:22:1c:30:0f:37
+{"ev":"init.timing","stage":"hal_init.post_init","ms":1}
+{"ev":"init.timing","stage":"hal_init.total","ms":10947}
+{"ev":"init.timing","stage":"hal.chip_init","ms":10947}
+devourer [I] [HW_VAR_ENABLE_RX_BAR] 0x 6A2=0x 520
+devourer [I] [set_channel_bwmode] ch = 36, offset = 0, bwmode = 0
+devourer [I] [PHY_HandleSwChnlAndSetBW8812] bSwitchChannel 1, bSetBandWidth 1
+{"ev":"init.timing","stage":"channel_set.sw_chnl","ms":121}
+{"ev":"init.timing","stage":"channel_set.set_bw","ms":67}
+{"ev":"init.timing","stage":"channel_set.tx_power","ms":12}
+{"ev":"init.timing","stage":"channel_set.iqk","ms":34}
+{"ev":"init.timing","stage":"channel_set.total","ms":236}
+{"ev":"init.timing","stage":"hal.mlme_monitor","ms":236}
+{"ev":"init.timing","stage":"hal.total","ms":11184}
+devourer [I] [set_channel_bwmode] ch = 36, offset = 0, bwmode = 0
+devourer [I] [PHY_HandleSwChnlAndSetBW8812] bSwitchChannel 1, bSetBandWidth 1
+devourer [I] [PHY_HandleSwChnlAndSetBW8812]: _swChannel 0, _setChannelBw 0
+devourer [I] Jaguar1: EDCCA thresholds L2H/H2L = 5/-2 (igi=0x1c)
+devourer [I] Jaguar1: MAC carrier-sense enabled (default)
+devourer [I] Listening air...
+devourer [I] RX: async ring of 8 URBs submitted (+0 spare, 0 zerocopy DMA, 8 heap)
+devourer [W] RX Warning!,pkt_len <= 0 or pkt_offset > transfer_len; pkt_len: 1237, pkt_offset: 1288, transfer_len: 84
+<Aviateur>[ERROR] Unable to read rx secret key: No error
+devourer [I] Jaguar1: clean de-init (stop TRX + card-disable)
+devourer [E] rtw_read(0c00), sizeof(T) = 1
+devourer [I] Jaguar1: Stop() de-init writes failed (chip already gone?)
+devourer [I] Jaguar1: clean de-init (stop TRX + card-disable)
+devourer [E] rtw_read(0c00), sizeof(T) = 1
+<Aviateur>[INFO] Stopping alink thread
+TxFrame: stopping main loop
+<Aviateur>[INFO] USB TX thread should stop
+<Aviateur>[INFO] USB TX thread stopped
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+<Aviateur>[INFO] USB thread stopped
+<vecgui>[INFO] Frame time: 18.31 ms | FPS: 60
+<vecgui>[INFO] Frame time: 14.63 ms | FPS: 61
+<vecgui>[INFO] Frame time: 16.11 ms | FPS: 61
+<vecgui>[INFO] Frame time: 16.23 ms | FPS: 65
+<vecgui>[INFO] Frame time: 17.56 ms | FPS: 62
+<vecgui>[INFO] Frame time: 16.4 ms | FPS: 60
+<vecgui>[INFO] Frame time: 17.31 ms | FPS: 61
+<vecgui>[INFO] Frame time: 17.8 ms | FPS: 60
+<vecgui>[INFO] Frame time: 19.1 ms | FPS: 60
+<vecgui>[INFO] Frame time: 18.18 ms | FPS: 60
+<vecgui>[INFO] Frame time: 15.62 ms | FPS: 61
+<vecgui>[INFO] Frame time: 17.66 ms | FPS: 60
+<Aviateur>[INFO] Using port: 52356
+<Aviateur>[INFO] Set alink tx power: 20
+devourer [I] USB adapter 1-3 locked for exclusive access
+devourer [I] Creating RtlJaguarDevice (PID 0x8812, chip-id 0x04)
+devourer [I] USB device 0bda:8812
+devourer [I] Running USB bus at 480MBit/s
+devourer [I] selected USB interface 0
+devourer [I] endpoint[0]: addr=0x81 attrs=0x2 bulk=1 in=1
+devourer [I] selected bulk IN endpoint: 0x81
+devourer [I] endpoint[1]: addr=0x2 attrs=0x2 bulk=1 in=0
+devourer [I] endpoint[2]: addr=0x3 attrs=0x2 bulk=1 in=0
+devourer [I] endpoint[3]: addr=0x4 attrs=0x2 bulk=1 in=0
+devourer [I] endpoint[4]: addr=0x85 attrs=0x3 bulk=0 in=1
+devourer [I] bulk OUT endpoints: 0x02 0x03 0x04
+devourer [I] libusb_clear_halt(bulk IN 0x81) rc=0
+devourer [I] OutEpQueueSel(7), OutEpNumber(3)
+devourer [I] Boot from EFUSE, Autoload OK !
+devourer [I] read_chip_version_8812a SYS_CFG(0xF0)=0x04411137
+devourer [I] RF_Type is 2 TotalTxPath is 2 MaxSS is 2
+devourer [I] Chip Version Info: CHIP_8812_Normal_Chip_TSMC_C_CUT_2T2R_RomVer(0)
+{"ev":"init.timing","stage":"eeprom.chip_version","ms":0}
+devourer [I] efuse_Addr-0 efuse_data=8
+devourer [I] Hal_EfuseReadEFuse8812A: eFuse_Addr offset(0x1AB) !!
+{"ev":"init.timing","stage":"eeprom.efuse_read","ms":207}
+devourer [I] EEPROM ID=0x8129
+devourer [I] pHalData.EEPROMVersion is 0x0
+devourer [I] EEPROMRegulatory = 0x1
+devourer [I] LoadTxPowerInfo: parsed 2 paths, 2.4G ch6 CCK_Base[0]=0x2d BW40_Base[0]=0x2d
+devourer [I] LoadTxPowerByRate: 2.4G path-A OFDM-6M offset=20 HT-MCS7 base=40
+devourer [I] LoadTxPowerLimit: active regulation=FCC (FCC OFDM 1T ch6 = 36)
+devourer [I] crystal_cap: 0x1B
+devourer [I] ThermalMeter = 0x29
+devourer [I] pHalData.PAType_2G is 0x3, pHalData.ExternalPA_2G = 0
+devourer [I] pHalData.PAType_5G is 0x3, pHalData.external_pa_5g = 1
+devourer [I] pHalData.LNAType_2G is 0x0, pHalData.ExternalLNA_2G = 0
+devourer [I] pHalData.LNAType_5G is 0x88, pHalData.external_lna_5g = 1
+devourer [I] pHalData.TypeGPA = 0x0
+devourer [I] pHalData.TypeAPA = 0x0
+devourer [I] pHalData.TypeGLNA = 0x0
+devourer [I] pHalData.TypeALNA = 0x0
+devourer [I] RFE Type: 0x1
+devourer [I] antenna=2, wmode=3
+devourer [I] EFUSE_HIDDEN_812AU
+{"ev":"init.timing","stage":"eeprom.parse","ms":1}
+{"ev":"init.timing","stage":"eeprom.total","ms":208}
+devourer [I] power-on :REG_SYS_CLKR 0x09=0xFC. REG_CR 0x100=0xFF
+devourer [I] MAC has already power on
+Transmitter is listening on UDP port: 8001
+devourer [I] =====> _8051Reset8812(): 8051 reset success .
+{"ev":"init.timing","stage":"hal_init.power_on","ms":3}
+{"ev":"init.timing","stage":"hal_init.llt","ms":30}
+devourer [I] FirmwareDownload(ic=6): fw_ver=52 fw_subver=10 sig=0x9501
+devourer [I] FirmwareManager::polling_fwdl_chksum: Checksum report OK! (1, 0ms), REG_MCUFWDL:00060705
+devourer [I] =====> _8051Reset8812(): 8051 reset success .
+devourer [I] FirmwareManager::_FWFreeToGo8812: Polling FW ready OK! (544, 28ms), REG_MCUFWDL:0x000607c6
+{"ev":"init.timing","stage":"hal_init.fwdl","ms":58}
+{"ev":"init.timing","stage":"hal_init.efuse_late","ms":0}
+{"ev":"init.timing","stage":"hal_init.mac_cfg","ms":5}
+{"ev":"init.timing","stage":"hal_init.queue_fifo","ms":0}
+{"ev":"init.timing","stage":"hal_init.mac_misc","ms":4}
+<vecgui>[INFO] Frame time: 17.41 ms | FPS: 62
+{"ev":"init.timing","stage":"hal_init.bb_config","ms":5856}
+<vecgui>[INFO] Frame time: 16.83 ms | FPS: 60
+{"ev":"init.timing","stage":"hal_init.rf_config","ms":7140}
+devourer [I] PowerTracking8812a init: default_ofdm_index=24 (swing_idx_from_bb=24) eeprom_thermal=0x29 txpwrtrack_ctrl=1
+devourer [I] [PHY_SwitchWirelessBand8812] 5G
+{"ev":"init.timing","stage":"hal_init.band_switch","ms":2}
+devourer [I] [PHY_HandleSwChnlAndSetBW8812] bSwitchChannel 1, bSetBandWidth 1
+{"ev":"init.timing","stage":"channel_set.sw_chnl","ms":144}
+{"ev":"init.timing","stage":"channel_set.set_bw","ms":57}
+{"ev":"init.timing","stage":"channel_set.tx_power","ms":12}
+<vecgui>[INFO] Frame time: 16.36 ms | FPS: 60
+devourer [I] Iqk8812a::Calibrate done (channel=36)
+{"ev":"init.timing","stage":"channel_set.iqk","ms":557}
+{"ev":"init.timing","stage":"channel_set.total","ms":771}
+{"ev":"init.timing","stage":"hal_init.channel_set","ms":772}
+devourer [I] post-init final: REG_CR observed=0x06ff written=0x06ff REG_RXFLTMAP2=0xFFFF
+devourer [I] REG_MACID programmed from EFUSE: fc:22:1c:30:0f:37
+{"ev":"init.timing","stage":"hal_init.post_init","ms":1}
+{"ev":"init.timing","stage":"hal_init.total","ms":13877}
+{"ev":"init.timing","stage":"hal.chip_init","ms":13877}
+devourer [I] [HW_VAR_ENABLE_RX_BAR] 0x 6A2=0x 520
+devourer [I] [set_channel_bwmode] ch = 36, offset = 0, bwmode = 0
+devourer [I] [PHY_HandleSwChnlAndSetBW8812] bSwitchChannel 1, bSetBandWidth 1
+{"ev":"init.timing","stage":"channel_set.sw_chnl","ms":128}
+{"ev":"init.timing","stage":"channel_set.set_bw","ms":63}
+{"ev":"init.timing","stage":"channel_set.tx_power","ms":12}
+{"ev":"init.timing","stage":"channel_set.iqk","ms":49}
+{"ev":"init.timing","stage":"channel_set.total","ms":253}
+{"ev":"init.timing","stage":"hal.mlme_monitor","ms":254}
+{"ev":"init.timing","stage":"hal.total","ms":14131}
+devourer [I] [set_channel_bwmode] ch = 36, offset = 0, bwmode = 0
+devourer [I] [PHY_HandleSwChnlAndSetBW8812] bSwitchChannel 1, bSetBandWidth 1
+devourer [I] [PHY_HandleSwChnlAndSetBW8812]: _swChannel 0, _setChannelBw 0
+devourer [I] Jaguar1: EDCCA thresholds L2H/H2L = 5/-2 (igi=0x1c)
+devourer [I] Jaguar1: MAC carrier-sense enabled (default)
+devourer [I] Listening air...
+devourer [I] RX: async ring of 8 URBs submitted (+0 spare, 0 zerocopy DMA, 8 heap)
+<Aviateur>[ERROR] Unable to read rx secret key: No error
+devourer [I] Jaguar1: clean de-init (stop TRX + card-disable)
+devourer [E] rtw_read(0c00), sizeof(T) = 1
+devourer [I] Jaguar1: Stop() de-init writes failed (chip already gone?)
+devourer [I] Jaguar1: clean de-init (stop TRX + card-disable)
+devourer [E] rtw_read(0c00), sizeof(T) = 1
+<Aviateur>[INFO] Stopping alink thread
+TxFrame: stopping main loop
+<Aviateur>[INFO] USB TX thread should stop
+<Aviateur>[INFO] USB TX thread stopped
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+libusb: error [do_close] Device handle closed while transfer was still being processed, but the device is still connected as far as we know
+libusb: error [do_close] A cancellation hasn't even been scheduled on the transfer for which the device is closing
+<Aviateur>[INFO] USB thread stopped
+<vecgui>[INFO] Frame time: 16.92 ms | FPS: 60

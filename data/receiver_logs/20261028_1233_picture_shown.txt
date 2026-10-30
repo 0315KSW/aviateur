@@ -1,0 +1,195 @@
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 15
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 15
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 15
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 15
+<vecgui>[INFO] Frame time: 20.38 ms | FPS: 62
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+[hevc @ 00000270D8F1D9C0] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 10
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 10
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 10
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 10
+<Aviateur>[INFO] RTP packets lost: 3
+<vecgui>[INFO] Frame time: 15.24 ms | FPS: 73
+<vecgui>[INFO] Frame time: 18.51 ms | FPS: 73
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 4
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 4
+<Aviateur>[INFO] RTP packets lost: 3
+<vecgui>[INFO] Frame time: 16.7 ms | FPS: 63
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 5
+<Aviateur>[INFO] RTP packets lost: 5
+<vecgui>[INFO] Frame time: 8.18 ms | FPS: 73
+<vecgui>[INFO] Frame time: 20.66 ms | FPS: 60
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+[hevc @ 00000270D8F1D9C0] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 1
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 1
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 1
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 1
+<vecgui>[INFO] Frame time: 18.64 ms | FPS: 67
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 3
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 18
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 18
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 18
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 18
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<vecgui>[INFO] Frame time: 14.93 ms | FPS: 63
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 4
+[hevc @ 00000270D8F1D9C0] <Aviateur>Skipping invalid undecodable NALU: 39
+[INFO] RTP packets lost: 4
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 4
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 3
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 22
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 22
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 22
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 22
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 5
+<Aviateur>[INFO] RTP packets lost: 1
+<vecgui>[INFO] Frame time: 16.23 ms | FPS: 61
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] [hevc @ 00000270D8F1D9C0] RTP packets lost: 2
+Skipping invalid undecodable NALU: 39
+<Aviateur>[INFO] RTP packets lost: 2
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 3
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 3
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 3
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 3
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 1
+[hevc @ 00000270D8F1D9C0] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 12
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 12
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 12
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 12
+<vecgui>[INFO] Frame time: 19.04 ms | FPS: 71
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<vecgui>[INFO] Frame time: 18.83 ms | FPS: 68
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 2
+<vecgui>[INFO] Frame time: 16.98 ms | FPS: 61
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+[hevc @ 00000270D8F1D9C0] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 4
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 4
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 4
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 4
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 4
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 1
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 12
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 11
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 12
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 11
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 12
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 11
+[hevc @ 00000270D8F1D9C0] Could not find ref with POC 12
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 1
+<vecgui>[INFO] Frame time: 18.71 ms | FPS: 61
+<Aviateur>[INFO] RTP packets lost: 1

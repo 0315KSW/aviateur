@@ -1,0 +1,142 @@
+<Aviateur>[INFO] RTP packets lost: 19
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 23
+<Aviateur>[INFO] RTP packets lost: 11
+<Aviateur>[INFO] RTP packets lost: 21
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 6
+<Aviateur>[INFO] RTP packets lost: 47
+<Aviateur>[INFO] RTP packets lost: 11
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 16
+<Aviateur>[INFO] RTP packets lost: 12
+<Aviateur>[INFO] RTP packets lost: 7
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 71
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] FfmpegDecoder::OpenInput
+<Aviateur>[INFO] FfmpegDecoder::CloseInput
+<Aviateur>[INFO] RTP packets lost: 9
+<Aviateur>[INFO] RTP packets lost: 23
+<Aviateur>[INFO] RTP packets lost: 30
+<Aviateur>[INFO] RTP packets lost: 7
+<Aviateur>[INFO] RTP packets lost: 5
+<Aviateur>[INFO] RTP packets lost: 11
+<Aviateur>[INFO] RTP packets lost: 7
+<Aviateur>[INFO] RTP packets lost: 13
+<Aviateur>[INFO] RTP packets lost: 13
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] RTP packets lost: 25
+<Aviateur>[INFO] RTP packets lost: 4
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 6
+<Aviateur>[INFO] RTP packets lost: 12
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 30
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 8
+<Aviateur>[INFO] RTP packets lost: 18
+<Aviateur>[INFO] RTP packets lost: 27
+<Aviateur>[INFO] RTP packets lost: 6
+<Aviateur>[INFO] RTP packets lost: 14
+<Aviateur>[INFO] RTP packets lost: 7
+<Aviateur>[INFO] RTP packets lost: 54
+<Aviateur>[INFO] RTP packets lost: 13
+<Aviateur>[INFO] RTP packets lost: 68
+<Aviateur>[INFO] RTP packets lost: 24
+<Aviateur>[INFO] RTP packets lost: 29
+<Aviateur>[INFO] RTP packets lost: 26
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 31
+<Aviateur>[INFO] RTP packets lost: 14
+<Aviateur>[INFO] RTP packets lost: 26
+<Aviateur>[INFO] RTP packets lost: 23
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 31
+<Aviateur>[INFO] RTP packets lost: 6
+<Aviateur>[INFO] RTP packets lost: 38
+<Aviateur>[INFO] RTP packets lost: 20
+<Aviateur>[INFO] RTP packets lost: 48
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 16
+<Aviateur>[INFO] RTP packets lost: 14
+<Aviateur>[INFO] RTP packets lost: 32
+<Aviateur>[INFO] RTP packets lost: 45
+<Aviateur>[INFO] RTP packets lost: 14
+<Aviateur>[INFO] RTP packets lost: 25
+<Aviateur>[INFO] RTP packets lost: 23
+<Aviateur>[INFO] RTP packets lost: 62
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+<vecgui>[INFO] Frame time: 16.33 ms | FPS: 60
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Skipping invalid undecodable NALU: 39
+[hevc @ 00000270D8E13E80] Could not find ref with POC 21
+[hevc @ 00000270D8E13E80] Could not find ref with POC 20
+[hevc @ 00000270D8E13E80] Could not find ref with POC 19
+<Aviateur>[INFO] RTP packets lost: 30
+[hevc @ 00000270D8E13E80] Could not find ref with POC 18
+<Aviateur>[INFO] RTP packets lost: 10
+<Aviateur>[INFO] RTP packets lost: 14
+<Aviateur>[INFO] RTP packets lost: 4
+<Aviateur>[INFO] RTP packets lost: 23
+<Aviateur>[INFO] RTP packets lost: 28
+<Aviateur>[INFO] RTP packets lost: 173
+<Aviateur>[INFO] RTP packets lost: 49
+<Aviateur>[INFO] RTP packets lost: 15
+<Aviateur>[INFO] RTP packets lost: 20
+<Aviateur>[INFO] RTP packets lost: 1
+<Aviateur>[INFO] RTP packets lost: 13
+<Aviateur>[INFO] RTP packets lost: 19
+<Aviateur>[INFO] RTP packets lost: 32
+<Aviateur>[INFO] RTP packets lost: 62
+<Aviateur>[INFO] RTP packets lost: 46
+<Aviateur>[INFO] RTP packets lost: 10
+<Aviateur>[INFO] RTP packets lost: 33
+<Aviateur>[INFO] RTP packets lost: 24
+<Aviateur>[INFO] RTP packets lost: 5
+<Aviateur>[INFO] RTP packets lost: 19
+<Aviateur>[INFO] RTP packets lost: 6
+<Aviateur>[INFO] RTP packets lost: 9
+<Aviateur>[INFO] RTP packets lost: 5
+<Aviateur>[INFO] RTP packets lost: 35
+<Aviateur>[INFO] RTP packets lost: 30
+<Aviateur>[INFO] RTP packets lost: 4
+<Aviateur>[INFO] RTP packets lost: 69
+<Aviateur>[INFO] RTP packets lost: 6
+[hevc @ 00000270D8E13E80] <Aviateurmissing picture in access unit with size 15961
+>[INFO] RTP packets lost: 18
+<Aviateur>[INFO] RTP packets lost: 11
+<Aviateur>[INFO] RTP packets lost: 3
+<Aviateur>[INFO] Video codec ID: 173
+<Aviateur>[INFO] Video codec name: HEVC (High Efficiency Video Coding)
+<Aviateur>[INFO] Found hardware decoder: dxva2
+<Aviateur>[INFO] Found hardware decoder: d3d11va
+<Aviateur>[INFO] Found hardware decoder: d3d12va
+<Aviateur>[INFO] Configuring hardware decoder: dxva2
+<Aviateur>[INFO] Hardware acceleration pixel format: 51
+<Aviateur>[INFO] Using hardware decoder: dxva2
+<Aviateur>[INFO] Video frame rate: 30
+<Aviateur>[INFO] Input reopened successfully, waiting for data...
+<Aviateur>[INFO] RTP packets lost: 61
+<Aviateur>[INFO] RTP packets lost: 62
+<Aviateur>[INFO] RTP packets lost: 45
+<Aviateur>[ERROR] Read frame failed: av_read_frame failed: Immediate exit requested
+<Aviateur>[INFO] FfmpegDecoder::CloseInput
+<Aviateur>[INFO] RTP packets lost: 109
+<Aviateur>[INFO] RTP packets lost: 31
+<Aviateur>[INFO] RTP packets lost: 4
+<Aviateur>[INFO] RTP packets lost: 2
+<Aviateur>[INFO] RTP packets lost: 22
+<Aviateur>[INFO] RTP packets lost: 5
+<Aviateur>[INFO] RTP packets lost: 5
+<Aviateur>[INFO] RTP packets lost: 6
