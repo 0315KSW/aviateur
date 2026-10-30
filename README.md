@@ -1,3 +1,6 @@
+> **프로젝트 작업 기록:** [360도 카메라 영상 전송 — 2026년 10월 29일 회의 이전 작업 정리](docs/pre-2026-10-29/README.md)  
+> 사용 장비·프로그램, 설치·실행·빌드, 파일별 코드 변경, 확인된 시험 결과를 정리했습니다.
+
 # Aviateur
 
 <p align="center">
@@ -137,3 +140,4 @@ Aviateur is released under the [GPL-3.0 License](LICENSE).
 
 ---
 <p align="center">Part of the <a href="https://github.com/OpenIPC">OpenIPC Project</a></p>
+
