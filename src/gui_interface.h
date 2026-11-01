@@ -21,7 +21,7 @@
 #define CONFIG_FILE "config.ini"
 
 // Identifies our modified receiver build in every log.
-#define LOWLAT_BUILD_TAG "Aviateur 0.3.3 + lowlat-rx patch 1.1 (stats, key rb, devourer rx env, log file fix)"
+#define LOWLAT_BUILD_TAG "Aviateur 0.3.3 + lowlat-rx patch 1.2 (stats, key rb, devourer rx env, log file fix, local RTP from LAN)"
 
 #define CONFIG_CONFIG "config"
 #define CONFIG_VERSION "version"
@@ -403,7 +403,11 @@ public:
         sdp << "v=0\n";
         sdp << "o=- 0 0 IN IP4 127.0.0.1\n";
         sdp << "s=No Name\n";
-        sdp << "c=IN IP4 127.0.0.1\n";
+        // 0.0.0.0 instead of 127.0.0.1: FFmpeg's SDP demuxer opens the RTP socket read-only and
+        // binds it to the c= address (libavformat/udp.c, bind_addr = hostname), so 127.0.0.1
+        // only accepted loopback packets and the Local tab could not receive RTP from a gateway
+        // on the LAN. 0.0.0.0 binds all interfaces; the Wi-Fi path (loopback) still works.
+        sdp << "c=IN IP4 0.0.0.0\n";
         sdp << "t=0 0\n";
         sdp << "m=video " << port << " RTP/AVP " << payloadType << "\n";
         sdp << "a=rtpmap:" << payloadType << " " << codec << "/90000\n";

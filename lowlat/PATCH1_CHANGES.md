@@ -249,3 +249,20 @@ WFB-ng 집계기 카운터는 Aviateur가 패킷마다 `clear_stats()`로 지우
 
 1. 13:3x 시험 때 송신 출력이 실제로 바뀌었는지 (`iw dev wlxfc221c1000f1 info`의 txpower 표시)
 2. 16.5fps는 어느 단계에서 잰 값인지 (카메라 입력 / 인코더 출력 / 송신)
+
+---
+
+## 패치 1.2: Local 탭이 LAN에서 오는 RTP를 못 받던 문제
+
+**문제**
+Local 탭으로 다른 장비(게이트웨이)가 LAN으로 보내는 RTP를 받으면 패킷은 PC에 도착하는데
+(방화벽 허용 확인) 디코더가 `av_read_frame failed: Immediate exit requested`만 반복하고 화면이 나오지 않았습니다.
+
+**원인**
+Aviateur가 만드는 SDP의 연결 주소가 `c=IN IP4 127.0.0.1`입니다. 이 빌드가 쓰는 FFmpeg 9.0.2
+(vcpkg)는 SDP의 RTP 소켓을 읽기 전용으로 열 때 그 주소에 bind합니다
+(`libavformat/udp.c`: `bind_addr = hostname`, FFmpeg 8.1부터). 그래서 127.0.0.1로만 bind되어
+LAN 주소로 들어오는 패킷을 받지 못했습니다. FFmpeg 6.1/7.x/8.0에는 이 코드가 없습니다.
+
+**변경** `src/gui_interface.h` `BuildSdp()`: `c=IN IP4 127.0.0.1` → `c=IN IP4 0.0.0.0`
+(모든 인터페이스에 bind. Wi-Fi 탭의 내부 127.0.0.1 전달도 그대로 동작)
