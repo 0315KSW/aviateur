@@ -1,0 +1,67 @@
+kw@gx10-5227:~$ timeout -s INT 60 python3 ~/다운로드/wfb_link_log.py --port 8102
+로그 파일: /home/ikw/wfb_logs/wfb_20261103_200611.csv
+연결: 127.0.0.1:8102  (종료: Ctrl+C)
+연결됨: profile=drone wlans=['wlxfc221c1000f1']
+20:06:11  video tx     in  239 pkt   2.09 Mbps | injected  457 pkt   3.65 Mbps | dropped   0 | lat 11 us
+20:06:12  video tx     in  230 pkt   2.01 Mbps | injected  438 pkt   3.49 Mbps | dropped   0 | lat 11 us
+20:06:13  video tx     in  232 pkt   2.02 Mbps | injected  459 pkt   3.58 Mbps | dropped   0 | lat 12 us
+20:06:14  video tx     in  234 pkt   2.04 Mbps | injected  464 pkt   3.64 Mbps | dropped   0 | lat 12 us
+20:06:15  video tx     in  232 pkt   2.02 Mbps | injected  450 pkt   3.54 Mbps | dropped   0 | lat 11 us
+20:06:16  video tx     in  233 pkt   2.03 Mbps | injected  456 pkt   3.59 Mbps | dropped   0 | lat 12 us
+20:06:17  video tx     in  231 pkt   2.01 Mbps | injected  445 pkt   3.53 Mbps | dropped   0 | lat 11 us
+20:06:18  video tx     in  232 pkt   2.04 Mbps | injected  456 pkt   3.60 Mbps | dropped   0 | lat 10 us
+20:06:19  video tx     in  230 pkt   2.02 Mbps | injected  445 pkt   3.54 Mbps | dropped   0 | lat 9 us
+20:06:20  video tx     in  232 pkt   2.03 Mbps | injected  440 pkt   3.55 Mbps | dropped   0 | lat 9 us
+20:06:21  video tx     in  231 pkt   2.03 Mbps | injected  444 pkt   3.55 Mbps | dropped   0 | lat 9 us
+20:06:22  video tx     in  232 pkt   2.03 Mbps | injected  435 pkt   3.51 Mbps | dropped   0 | lat 9 us
+20:06:23  video tx     in  230 pkt   2.01 Mbps | injected  445 pkt   3.54 Mbps | dropped   0 | lat 9 us
+20:06:24  video tx     in  233 pkt   2.04 Mbps | injected  446 pkt   3.56 Mbps | dropped   0 | lat 11 us
+20:06:25  video tx     in  231 pkt   2.02 Mbps | injected  454 pkt   3.58 Mbps | dropped   0 | lat 12 us
+20:06:26  video tx     in  230 pkt   2.01 Mbps | injected  440 pkt   3.49 Mbps | dropped   0 | lat 12 us
+20:06:27  video tx     in  234 pkt   2.06 Mbps | injected  444 pkt   3.58 Mbps | dropped   0 | lat 11 us
+20:06:28  video tx     in  224 pkt   2.02 Mbps | injected  393 pkt   3.37 Mbps | dropped   0 | lat 11 us
+20:06:29  video tx     in  223 pkt   1.99 Mbps | injected  390 pkt   3.30 Mbps | dropped   0 | lat 11 us
+20:06:30  video tx     in  232 pkt   2.02 Mbps | injected  409 pkt   3.42 Mbps | dropped   0 | lat 10 us
+20:06:31  video tx     in  231 pkt   2.04 Mbps | injected  414 pkt   3.48 Mbps | dropped   0 | lat 10 us
+20:06:32  video tx     in  234 pkt   2.05 Mbps | injected  424 pkt   3.49 Mbps | dropped   0 | lat 8 us
+20:06:33  video tx     in  225 pkt   1.98 Mbps | injected  389 pkt   3.30 Mbps | dropped   0 | lat 8 us
+20:06:34  video tx     in  229 pkt   2.02 Mbps | injected  408 pkt   3.42 Mbps | dropped   0 | lat 8 us
+20:06:35  video tx     in  238 pkt   2.10 Mbps | injected  440 pkt   3.62 Mbps | dropped   0 | lat 9 us
+20:06:36  video tx     in  227 pkt   1.99 Mbps | injected  420 pkt   3.42 Mbps | dropped   0 | lat 9 us
+20:06:37  video tx     in  229 pkt   2.01 Mbps | injected  422 pkt   3.44 Mbps | dropped   0 | lat 9 us
+20:06:38  video tx     in  232 pkt   2.03 Mbps | injected  420 pkt   3.47 Mbps | dropped   0 | lat 8 us
+20:06:39  video tx     in  230 pkt   2.02 Mbps | injected  421 pkt   3.46 Mbps | dropped   0 | lat 9 us
+20:06:40  video tx     in  232 pkt   2.05 Mbps | injected  421 pkt   3.49 Mbps | dropped   0 | lat 8 us
+20:06:41  video tx     in  232 pkt   2.04 Mbps | injected  412 pkt   3.44 Mbps | dropped   0 | lat 9 us
+20:06:42  video tx     in  231 pkt   2.02 Mbps | injected  430 pkt   3.50 Mbps | dropped   0 | lat 8 us
+20:06:43  video tx     in  227 pkt   1.99 Mbps | injected  409 pkt   3.38 Mbps | dropped   0 | lat 6 us
+20:06:44  video tx     in  234 pkt   2.07 Mbps | injected  433 pkt   3.54 Mbps | dropped   0 | lat 6 us
+20:06:45  video tx     in  228 pkt   2.02 Mbps | injected  397 pkt   3.38 Mbps | dropped   0 | lat 8 us
+20:06:46  video tx     in  227 pkt   2.00 Mbps | injected  409 pkt   3.40 Mbps | dropped   0 | lat 9 us
+20:06:47  video tx     in  233 pkt   2.02 Mbps | injected  421 pkt   3.46 Mbps | dropped   0 | lat 10 us
+20:06:48  video tx     in  232 pkt   2.06 Mbps | injected  421 pkt   3.49 Mbps | dropped   0 | lat 10 us
+20:06:49  video tx     in  227 pkt   2.00 Mbps | injected  416 pkt   3.40 Mbps | dropped   0 | lat 11 us
+20:06:50  video tx     in  235 pkt   2.02 Mbps | injected  426 pkt   3.50 Mbps | dropped   0 | lat 10 us
+20:06:51  video tx     in  227 pkt   2.02 Mbps | injected  409 pkt   3.42 Mbps | dropped   0 | lat 11 us
+20:06:52  video tx     in  229 pkt   2.05 Mbps | injected  421 pkt   3.49 Mbps | dropped   0 | lat 11 us
+20:06:53  video tx     in  228 pkt   2.02 Mbps | injected  409 pkt   3.41 Mbps | dropped   0 | lat 12 us
+20:06:54  video tx     in  234 pkt   2.05 Mbps | injected  421 pkt   3.49 Mbps | dropped   0 | lat 10 us
+20:06:55  video tx     in  231 pkt   2.02 Mbps | injected  421 pkt   3.42 Mbps | dropped   0 | lat 12 us
+20:06:56  video tx     in  224 pkt   1.97 Mbps | injected  399 pkt   3.33 Mbps | dropped   0 | lat 10 us
+20:06:57  video tx     in  236 pkt   2.07 Mbps | injected  450 pkt   3.56 Mbps | dropped   0 | lat 11 us
+20:06:58  video tx     in  226 pkt   2.00 Mbps | injected  417 pkt   3.44 Mbps | dropped   0 | lat 9 us
+20:06:59  video tx     in  230 pkt   2.03 Mbps | injected  424 pkt   3.47 Mbps | dropped   0 | lat 8 us
+20:07:00  video tx     in  228 pkt   2.00 Mbps | injected  430 pkt   3.46 Mbps | dropped   0 | lat 8 us
+20:07:01  video tx     in  231 pkt   2.02 Mbps | injected  448 pkt   3.53 Mbps | dropped   0 | lat 8 us
+20:07:02  video tx     in  229 pkt   1.99 Mbps | injected  432 pkt   3.47 Mbps | dropped   0 | lat 8 us
+20:07:03  video tx     in  239 pkt   2.10 Mbps | injected  447 pkt   3.62 Mbps | dropped   0 | lat 8 us
+20:07:04  video tx     in  226 pkt   2.00 Mbps | injected  414 pkt   3.44 Mbps | dropped   0 | lat 7 us
+20:07:05  video tx     in  227 pkt   2.00 Mbps | injected  409 pkt   3.40 Mbps | dropped   0 | lat 8 us
+20:07:06  video tx     in  239 pkt   2.13 Mbps | injected  416 pkt   3.53 Mbps | dropped   0 | lat 8 us
+20:07:07  video tx     in  218 pkt   1.93 Mbps | injected  402 pkt   3.32 Mbps | dropped   0 | lat 8 us
+20:07:08  video tx     in  229 pkt   2.04 Mbps | injected  421 pkt   3.47 Mbps | dropped   0 | lat 11 us
+20:07:09  video tx     in  229 pkt   2.03 Mbps | injected  397 pkt   3.38 Mbps | dropped   0 | lat 10 us
+20:07:10  video tx     in  231 pkt   2.05 Mbps | injected  421 pkt   3.49 Mbps | dropped   0 | lat 11 us
+
+종료. 로그: /home/ikw/wfb_logs/wfb_20261103_200611.csv
+ikw@gx10-5227:~$ 
